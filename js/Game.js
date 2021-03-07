@@ -64,17 +64,16 @@ class Game {
         x = x + 200;
         //use data form the database to display the cars in y direction
         y = displayHeight - allPlayers[plr].distance;
-        cars[index-1].x = x;
+        cars[index-1].x = x; 
         cars[index-1].y = y;
 
         if (index === player.index){
-          cars[index - 1].shapeColor = "red";
+          fill("red");
+          ellipse(x, y, 60, 160);
           camera.position.x = displayWidth/2;
           camera.position.y = cars[index-1].y
         }
        
-        //textSize(15);
-        //text(allPlayers[plr].name + ": " + allPlayers[plr].distance, 120,display_position)
       }
 
     }
@@ -101,3 +100,13 @@ end(){
 
 
 }
+
+
+/*
+
+for(4 times - allplayers){
+  for (4 times - cars){
+
+  }
+}
+*/
