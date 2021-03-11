@@ -27,6 +27,7 @@ class Form {
         game.update(0);
         player.updateCount(0);
         database.ref("/").child("players").remove();
+        Player.updateCarsAtEnd(0);
       }
     );
     
@@ -46,3 +47,9 @@ class Form {
 
   }
 }
+
+
+/*
+DOM - Document Object Model
+
+*/

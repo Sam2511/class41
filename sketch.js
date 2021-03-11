@@ -1,5 +1,5 @@
 var canvas, backgroundImage;
-
+var alert = 1;
 var gameState = 0;
 var playerCount;
 var allPlayers;

@@ -44,11 +44,14 @@ class Game {
     form.hide();
 
     Player.getPlayerInfo();
+    player.getCarsAtEnd();
     //GAME STARTS
     if(allPlayers !== undefined){
       background("Green");
       image(track, 0, -4*displayHeight, displayWidth, displayHeight*5);
      
+
+
       //index of the array
       var index = 0;
 
@@ -86,12 +89,24 @@ class Game {
 
     if(player.distance>3438){
       gameState = 2;
+      player.rank = player.rank+1;
+      Player.updateCarsAtEnd(player.rank);
     }
     drawSprites();
   }
 
 end(){
-  console.log("Congrats to the winner and the other people should get lost and never play this game again. Nothing for the winner :|")
+  if(alert ){
+    swal({
+      title: "Game Over!!!!!!!!!!",
+      text: "Your Rank is -> "+ player.rank,
+      icon: "success",
+      button: "Who Ever won is the best and who lost is the worst racer"
+      //buttons: false
+    })
+    alert = 0;
+  }
+  
 }
 
 
